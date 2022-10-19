@@ -11,11 +11,12 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
-  console.log("Connecting ...");
-
   conn.on("connect", () => {
     console.log("Welcome to the game\n");
     conn.write("Name: CV");
+    setInterval(() => {
+      
+    }, 500);
   });
 
   conn.on('data', (data) => {
