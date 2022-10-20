@@ -1,5 +1,5 @@
 const net = require("net");
-const { IP, PORT } = require("./constants");
+const { IP, PORT } = require("./constants"); // constants to pull localhost and the port.
 
 // establishes a connection with the game server
 const connect = function() {
@@ -14,10 +14,7 @@ const connect = function() {
 
   conn.on("connect", () => {
     console.log("Welcome to the game\n");
-    conn.write("Name: CV");
-    setInterval(() => {
-      
-    }, 500);
+    conn.write("Name: PLR"); // Change this to change the name of the snake. 3 letter max
   });
 
   conn.on('data', (data) => {
@@ -29,4 +26,4 @@ const connect = function() {
 
 module.exports = {
   connect
-};
+}; // Export to be used within input.js (gets exported to play.js and then into input.js from within play.js)
